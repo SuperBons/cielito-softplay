@@ -258,9 +258,27 @@ View Packages
               <h2 className="font-display text-3xl md:text-4xl mb-2" style={{ color: primary }}>Follow the Fun</h2>
               <p style={{ color: onSurfaceVariant }}>@cielitosoftplay</p>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+            {/* Mobile: hero image full-width at top, then rest in 2-col grid */}
+            <div className="md:hidden flex flex-col gap-4">
+              {/* Big hero image — first image displayed large */}
+              <div className="w-full aspect-[4/3] rounded-lg overflow-hidden group">
+                <img src={GALLERY[0]} alt="Cielito Soft Play gallery" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              </div>
+              {/* Remaining images in a 2-column grid */}
+              <div className="grid grid-cols-2 gap-4">
+                {GALLERY.slice(1).map((src) => (
+                  <div key={src} className="aspect-square rounded-lg overflow-hidden group">
+                    <img src={src} alt="Cielito Soft Play gallery" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Desktop: original 4-column grid with featured image spanning 2 cols */}
+            <div className="hidden md:grid grid-cols-4 gap-4">
               {GALLERY.map((src, i) => (
-                <div key={src} className={`aspect-square rounded-lg overflow-hidden group ${i === 1 ? "md:col-span-2 md:row-span-2" : ""}`}>
+                <div key={src} className={`aspect-square rounded-lg overflow-hidden group ${i === 1 ? "col-span-2 row-span-2" : ""}`}>
                   <img src={src} alt="Cielito Soft Play gallery" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
               ))}
@@ -297,7 +315,7 @@ View Packages
         </div>
         <div className="border-t w-full py-6 text-center" style={{ borderColor: "rgba(101,101,92,0.1)" }}>
           <p className="text-xs" style={{ color: "rgba(101,101,92,0.6)" }}>
-            © 2024 Cielito Soft Play. All rights reserved.
+            © 2026 Cielito Soft Play. All rights reserved. Made by Alex "the goat" Sanchez
           </p>
         </div>
       </footer>
