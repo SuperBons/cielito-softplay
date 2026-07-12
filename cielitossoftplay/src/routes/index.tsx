@@ -5,6 +5,8 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const BOOKING_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSeWfluaqx55kcap5FvY3EqaeQ7D_YewBhVmQ_alrw3YNVaWZw/viewform";
 const HERO_IMG = "/setup_pic.webp";
 const ABOUT_IMG = "/fernyandstep.webp";
 
@@ -219,7 +221,7 @@ function Index() {
 
   {/* Book Now button */}
   <a
-    href="https://www.youtube.com/watch?v=izGwDsrQ1eQ"
+    href={BOOKING_URL}
     target="_blank"
     rel="noopener noreferrer"
     className="rounded-full px-6 py-2 transition-opacity hover:opacity-90"
@@ -266,7 +268,7 @@ function Index() {
             </p>
     <div className="flex flex-col sm:flex-row gap-4 justify-center">
 <a
-href="https://www.youtube.com/watch?v=izGwDsrQ1eQ"
+href={BOOKING_URL}
 target="_blank"
 rel="noopener noreferrer"
 className="font-label text-sm px-8 py-4 rounded-full uppercase tracking-wider transition-opacity hover:opacity-90"
@@ -339,8 +341,11 @@ style={{ borderColor: primary, color: primary }}
                       </li>
                     ))}
                   </ul>
-                  <button
-                    className="w-full font-label text-sm py-3 rounded-full uppercase tracking-wider transition-colors relative z-10 hover:opacity-90"
+                  <a
+                    href={BOOKING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full font-label text-sm py-3 rounded-full uppercase tracking-wider transition-colors relative z-10 hover:opacity-90 inline-block text-center"
                     style={
                       p.featured
                         ? { background: primary, color: "#fff" }
@@ -348,7 +353,7 @@ style={{ borderColor: primary, color: primary }}
                     }
                   >
                     {p.cta}
-                  </button>
+                  </a>
                 </div>
               ))}
             </div>
