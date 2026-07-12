@@ -178,7 +178,7 @@ function Index() {
     },
     {
       name: t.pkg.premium.name,
-      price: "$550",
+      price: "$500",
       features: t.pkg.premium.features,
       cta: t.pkg.premium.cta,
     },
